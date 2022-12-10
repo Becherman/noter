@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {ChakraProvider} from '@chakra-ui/react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {RouterProvider} from 'react-router-dom';
@@ -9,9 +10,11 @@ import {NotesProvider} from './features/notes/notes-provider';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <NotesProvider>
-      <RouterProvider router={router} />
-    </NotesProvider>
+    <ChakraProvider>
+      <NotesProvider>
+        <RouterProvider router={router} />
+      </NotesProvider>
+    </ChakraProvider>
   </React.StrictMode>
 );
 

@@ -1,4 +1,6 @@
-import { useOpenNewModalPage } from '../../hooks/use-open-page';
+import {Button} from '@chakra-ui/react';
+import { AddIcon } from '@chakra-ui/icons';
+import {useOpenNewModalPage} from '../../hooks/use-open-page';
 import styles from './Header.module.scss';
 
 export const Header = () => {
@@ -6,7 +8,9 @@ export const Header = () => {
   return (
     <div className={styles.Header}>
       <h1>Header</h1>
-      <button onClick={openNewModalPage}>+</button>
+      <Button colorScheme="pink" variant="outline" leftIcon={<AddIcon />} onClick={openNewModalPage}>
+        New Note
+      </Button>
     </div>
-  )
-}
+  );
+};
